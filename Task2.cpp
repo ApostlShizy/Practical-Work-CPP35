@@ -9,8 +9,9 @@ int main() {
         std::unordered_set<int> setNumbers;
         for (auto& current : numbers) {
             setNumbers.insert(current);
-        }        
-        return std::make_unique<std::unordered_set<int>>(setNumbers);
+        }   
+        std::vector<int> uniqueNumbers(setNumbers.begin(),setNumbers.end());
+        return std::make_unique<std::vector<int>>(uniqueNumbers);
     };
 
     auto uniqueNumbers = makeUniqueNumber(numbers);
